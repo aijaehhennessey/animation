@@ -1,12 +1,8 @@
 let bees=[]
 let flowers=[]
+let clouds=[]
 
-var n = 12,
-      r = 200,
-      l = 0,
-      k = 0,
-      m = 0,
-      t=0;
+
 
 function setup() {
 
@@ -39,7 +35,17 @@ function setup() {
 flowers.push(random_flower)
     }
 
+
+  for (let i=0 ;i<6 ; i++){
+    let random_cloud={
+    x:random(0,width),
+    y:random(0,height/8,),
+    vx:.3,
+    vy:.2}
+clouds.push(random_cloud)
   }
+
+}
 
   function draw() {
 
@@ -50,7 +56,43 @@ flowers.push(random_flower)
 noStroke()
 fill(132, 206, 224)
     square(0,0,width,height/2)
+// simple grass
 
+for ( let cloud of clouds) {
+  noStroke()
+    fill(234, 225, 240)
+
+    circle(cloud.x,cloud.y,400)
+    circle(cloud.x+1,cloud.y+52,400)
+    circle(cloud.x-157,cloud.y+30,400)
+    circle(cloud.x-155,cloud.y+160,400)
+    circle(cloud.x-121,cloud.y+186,400)
+    circle(cloud.x-293,cloud.y+150,200)
+    circle(cloud.x-293,cloud.y+216,250)
+    circle(cloud.x-392,cloud.y+96,250)
+    circle(cloud.x+176,cloud.y+62,350)
+
+    cloud.x += cloud.vx + cos(.3)
+    cloud.y += cloud.y * cloud.vy
+
+          if (cloud.x>=width-cloud.x) {
+            cloud.vx=-cloud.vx
+          }
+
+          if(cloud.x<=0) {
+            cloud.vx=-cloud.vx
+          }
+
+          if(cloud.y>=height/8) {
+            cloud.vy=-cloud.vy
+          }
+
+          if(cloud.y<=0) {
+            cloud.vy=-cloud.vy
+          }
+
+//clouds back and forth behind text
+}
 
     for ( let bee of bees) {
       strokeWeight(1)
@@ -76,7 +118,6 @@ bee.x += bee.vx * cos(.5)
 bee.y += bee.vy * sin(6)
 
 
-
       if (bee.x>= width) {
         bee.vx=-bee.vx
       }
@@ -92,7 +133,7 @@ bee.y += bee.vy * sin(6)
       if(bee.y<=0) {
         bee.vy=-bee.vy
       }
-
+// bees just vibing
     }
 
     for ( let flower of flowers) {
@@ -134,12 +175,34 @@ bee.y += bee.vy * sin(6)
               if(flower.y>=0) {
                 flower.vy=-flower.vy
               }
+    // vibrating flowers
+
+
 
 strokeWeight(20);
 stroke(224, 187, 2)
 fill(230, 179, 41)
-circle(0,0,width/6,height/8)
+circle(0,0,width/8,)
 }
+// a static sun
+
+
+
+textFont('Georgia')
+textSize(75)
+strokeWeight(5)
+stroke(194, 118, 155)
+fill(207, 174, 41)
+text("Bees Dont Practice Social Distancing",width/2.5,75)
+textSize(45)
+noStroke()
+fill(16, 69, 10)
+text("What form of nature would respond well to the chaos of animation ?:things that came in large quantities, and naturally moved chaoticlly. I eventually considered bees!",width/9,height/9)
+text("Given all the social distancing,it occured to me that bees would be unable to practice social distancing.I don't know why this stood out to me.",width/9,height/8)
+text("So I went with bees and created them on a sunny spring day , where the flowers are blooming and literally vibrating with excitment for good weather and bees.",width/9,height/7)
+text("Sun, healthy bee populations , and nature are things we all need in these stressful times.And eventually we'll all be outside with them again.",width/9, height/6)
+
+
 
   // if the window is resized, resize the canvas to match
   function windowResized() {

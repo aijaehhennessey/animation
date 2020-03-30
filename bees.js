@@ -36,6 +36,15 @@ flowers.push(random_flower)
   }
 }
 
+for (let i=0 ;i<6 ; i++){
+  let random_cloud={
+  x:0,
+  y:0,
+  vx:.3,
+  vy:.2}
+clouds.push(random_cloud)
+}
+
   function draw() {
 
       angleMode(DEGREES);
@@ -187,3 +196,4 @@ circle(0,0,width/16,)
   function mouseClicked(){
     print(int(mouseX), int(mouseY))
   }
+}

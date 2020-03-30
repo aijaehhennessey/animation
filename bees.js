@@ -33,9 +33,7 @@ function setup() {
       vx:1,
       vy:5}
 flowers.push(random_flower)
-    }
-
-
+  }
 }
 
   function draw() {
@@ -49,38 +47,38 @@ fill(132, 206, 224)
     square(0,0,width,height/2)
 // simple grass
 
-// for ( let cloud of clouds) {
-//   noStroke()
-//     fill(234, 225, 240)
-//
-//     circle(cloud.x,cloud.y,200)
-//     circle(cloud.x+.5,cloud.y+26,200)
-//     circle(cloud.x-178.5,cloud.y+30,200)
-//     circle(cloud.x-77.5,cloud.y+80,200)
-//     circle(cloud.x-60.5,cloud.y+93,200)
-//     circle(cloud.x-150,cloud.y+75,100)
-//     circle(cloud.x-146,cloud.y+108,125)
-//     circle(cloud.x-196,cloud.y+96,125)
-//     circle(cloud.x+88,cloud.y+31,175)
-//
-//     cloud.x += cloud.vx + cos(.3)
-//     cloud.y += cloud.y * cloud.vy
-//
-//           if (cloud.x>=width-cloud.x) {
-//             cloud.vx=-cloud.vx
-//           }
-//
-//           if(cloud.x<=0) {
-//             cloud.vx=-cloud.vx
-//           }
-//
-//           if(cloud.y>=height/8) {
-//             cloud.vy=-cloud.vy
-//           }
-//
-//           if(cloud.y<=0) {
-//             cloud.vy=-cloud.vy
-//           }
+for ( let cloud of clouds) {
+  noStroke()
+    fill(234, 225, 240)
+
+    circle(cloud.x,cloud.y,200)
+    circle(cloud.x+.5,cloud.y+26,200)
+    circle(cloud.x-178.5,cloud.y+30,200)
+    circle(cloud.x-77.5,cloud.y+80,200)
+    circle(cloud.x-60.5,cloud.y+93,200)
+    circle(cloud.x-150,cloud.y+75,100)
+    circle(cloud.x-146,cloud.y+108,125)
+    circle(cloud.x-196,cloud.y+96,125)
+    circle(cloud.x+88,cloud.y+31,175)
+
+    cloud.x += cloud.vx + cos(.3)
+    cloud.y += cloud.y * cloud.vy
+
+          if (cloud.x>=width-cloud.x) {
+            cloud.vx=-cloud.vx
+          }
+
+          if(cloud.x<=0) {
+            cloud.vx=-cloud.vx
+          }
+
+          if(cloud.y>=height/8) {
+            cloud.vy=-cloud.vy
+          }
+
+          if(cloud.y<=0) {
+            cloud.vy=-cloud.vy
+          }
 //
 // //clouds back and forth behind text
 }
@@ -179,21 +177,7 @@ circle(0,0,width/16,)
 
 
 
-textFont('Georgia')
-textSize(40)
-strokeWeight(5)
-stroke(194, 118, 155)
-fill(207, 174, 41)
-text("Bees Dont Practice Social Distancing",width/2.5,75)
-// textSize(25)
-// noStroke()
-// fill(16, 69, 10)
-// text("What form of nature would respond well to the chaos of animation ?:things that came in large quantities, and naturally moved chaoticlly. I eventually considered bees!",width/9,height/9)
-// text("Given all the social distancing,it occured to me that bees would be unable to practice social distancing.I don't know why this stood out to me.",width/9,height/8)
-// text("So I went with bees and created them on a sunny spring day , where the flowers are blooming and literally vibrating with excitment for good weather and bees.",width/9,height/7)
-// text("Sun, healthy bee populations , and nature are things we all need in these stressful times.And eventually we'll all be outside with them again.",width/9, height/6)
-//
-//
+
 
   // if the window is resized, resize the canvas to match
   function windowResized() {
@@ -203,8 +187,3 @@ text("Bees Dont Practice Social Distancing",width/2.5,75)
   function mouseClicked(){
     print(int(mouseX), int(mouseY))
   }
-
-// function bee() {
-//   ellipse(300,200,35,18)
-// }
-}
